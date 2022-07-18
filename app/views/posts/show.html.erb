@@ -1,0 +1,10 @@
+<h2><%= @post.title %></h2>
+<p><%= @post.body%></p>
+<br>
+
+<small>Posted <%= time_ago_in_words(@post.created_at)%> ago</small><br>
+<div class="d-grid gap-2 d-md-flex">
+    <%= link_to "Edit", edit_post_path(@post)%>
+    <%= button_to "Delete", post_path(@post), method: :delete%>
+</div>
+   
