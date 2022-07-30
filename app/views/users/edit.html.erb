@@ -1,0 +1,22 @@
+<% if @user.errors.any? %>
+    <p> <%= @user.errors.full_massage.join(',') %> </p>
+<% end %>
+
+<div>
+<%= form_with(model: @user) do |f| %>
+    <div>
+        <%= f.label :first_name%>
+        <%= f.text_field :first_name%>
+    </div>
+    <div>
+        <%= f.label :last_name%>
+        <%= f.text_field :last_name%>
+    </div>
+    <div>
+        <%= f.label :email%>
+        <%= f.text_field :email%>
+    </div>
+    <%= link_to "Change password", change_password_path%>
+    <%= f.submit %>
+<% end %>
+</div>

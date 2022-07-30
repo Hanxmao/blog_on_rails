@@ -3,4 +3,5 @@ class Post < ApplicationRecord
     validates :body, presence: true, length: {minimum: 50}
 
     has_many :comments, dependent: :destroy
+    belongs_to :user
 end
