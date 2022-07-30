@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+50.times do
+    created_at = Faker::Date.backward(days:365 * 5)
+
+    Post.create(
+     title: Faker::Hacker.say_something_smart,
+     body: Faker::Lorem.paragraphs(number: 3),
+     created_at: created_at,
+     updated_at: created_at)
+end
+
+p = Post.all
+
+puts p
